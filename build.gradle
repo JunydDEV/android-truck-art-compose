@@ -1,0 +1,10 @@
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+buildscript {
+    ext {
+        compose_version = '1.0.0'
+    }
+}
