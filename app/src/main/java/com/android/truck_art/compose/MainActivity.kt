@@ -10,6 +10,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.unit.dp
 import com.android.truck_art.compose.ui.theme.AndroidtruckartcomposeTheme
 import com.android.truck_art.compose.ui.theme.CanvasBackground
@@ -37,16 +38,23 @@ class MainActivity : ComponentActivity() {
             verticalArrangement = Arrangement.Center,
             modifier = Modifier.fillMaxHeight()
         ) {
-            Canvas(
-                modifier = Modifier
-                    .background(color = CanvasBackground)
-                    .fillMaxWidth()
-                    .height(320.dp)
-            ) {
+            TruckCanvas {
                 drawArtBannerAt(ArtPosition.TOP)
                 drawArtBannerAt(ArtPosition.CENTER)
                 drawArtBannerAt(ArtPosition.BOTTOM)
             }
+        }
+    }
+
+    @Composable
+    private fun TruckCanvas(onDraw: DrawScope.() -> Unit) {
+        Canvas(
+            modifier = Modifier
+                .background(color = CanvasBackground)
+                .fillMaxWidth()
+                .height(320.dp)
+        ) {
+            onDraw.invoke(this)
         }
     }
 
