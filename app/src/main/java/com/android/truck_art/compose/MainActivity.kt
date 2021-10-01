@@ -1,8 +1,5 @@
 package com.android.truck_art.compose
 
-import androidx.compose.ui.ExperimentalComposeUiApi
-
-
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -85,7 +82,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    @OptIn(ExperimentalComposeUiApi::class)
     private fun DrawScope.drawCenterArt() {
         drawRectangle(
             color = CenterRectBackground,

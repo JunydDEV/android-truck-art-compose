@@ -58,7 +58,7 @@ class ArtItems {
             )
         }
 
-        private fun DrawScope.createPath(
+        private fun createPath(
             marginLeft: Float,
             marginTop: Float,
             sides: Int,
