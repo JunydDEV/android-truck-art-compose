@@ -38,11 +38,16 @@ class ArtItems {
             }
         }
 
-        fun DrawScope.dottedLine(marginTop: Dp, strokeWidth:Float = 10f, blendMode: BlendMode = DrawScope.DefaultBlendMode) {
+        fun DrawScope.dottedLine(
+            marginTop: Dp,
+            marginStart: Dp,
+            strokeWidth: Float = 10f,
+            blendMode: BlendMode = DrawScope.DefaultBlendMode
+        ) {
             drawLine(
                 color = Color.White,
-                start = Offset(5f, marginTop.toPx()),
-                end = Offset(size.width, marginTop.toPx()),
+                start = Offset(marginStart.toPx(), marginTop.toPx()),
+                end = Offset(size.width - marginStart.toPx(), marginTop.toPx()),
                 strokeWidth = strokeWidth,
                 pathEffect = PathEffect.dashPathEffect(
                     floatArrayOf(0f, 30f),

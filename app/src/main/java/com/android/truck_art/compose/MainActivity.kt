@@ -79,9 +79,9 @@ class MainActivity : ComponentActivity() {
         drawRectangle(
             color = CanvasBackground, height = 60.dp
         ) {
-            dottedLine(marginTop = 10.dp)
+            dottedLine(marginTop = 10.dp, marginStart = 5.dp)
             diamondsPattern(marginTop = 30.dp)
-            dottedLine(marginTop = 50.dp)
+            dottedLine(marginTop = 50.dp, marginStart = 5.dp)
         }
     }
 
@@ -105,9 +105,9 @@ class MainActivity : ComponentActivity() {
             topMargin = 240.dp,
             height = 60.dp
         ) {
-            dottedLine(marginTop = 250.dp)
+            dottedLine(marginTop = 250.dp, marginStart = 5.dp)
             diamondsPattern(marginTop = 270.dp)
-            dottedLine(marginTop = 290.dp)
+            dottedLine(marginTop = 290.dp, marginStart = 5.dp)
         }
     }
 
