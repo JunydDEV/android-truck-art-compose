@@ -46,7 +46,7 @@ class MainActivity : ComponentActivity() {
                 modifier = Modifier
                     .background(color = CanvasBackground)
                     .fillMaxWidth()
-                    .height(300.dp)
+                    .height(320.dp)
             ) {
                 drawArtAt(ArtPosition.TOP)
                 drawArtAt(ArtPosition.CENTER)
@@ -71,18 +71,20 @@ class MainActivity : ComponentActivity() {
 
     private fun DrawScope.drawTopArt() {
         drawRectangle(
-            color = CanvasBackground, height = 60.dp
+            color = SecondaryRectangleBackground,
+            height = 60.dp,
+            topMargin = 5.dp
         ) {
-            dottedLine(marginTop = 10.dp, marginStart = 5.dp)
-            diamondsPattern(marginTop = 30.dp)
-            dottedLine(marginTop = 50.dp, marginStart = 5.dp)
+            dottedLine(marginTop = 15.dp, marginStart = 5.dp)
+            diamondsPattern(marginTop = 35.dp)
+            dottedLine(marginTop = 55.dp, marginStart = 5.dp)
         }
     }
 
     private fun DrawScope.drawCenterArt() {
         drawRectangle(
-            color = CenterRectBackground,
-            topMargin = 60.dp,
+            color = PrimaryRectangleBackground,
+            topMargin = 70.dp,
             height = 180.dp
         ) {
             drawFlower(center.x - 300, center.y)
@@ -94,13 +96,13 @@ class MainActivity : ComponentActivity() {
 
     private fun DrawScope.drawBottomArt() {
         drawRectangle(
-            color = CanvasBackground,
-            topMargin = 240.dp,
+            color = SecondaryRectangleBackground,
+            topMargin = 255.dp,
             height = 60.dp
         ) {
-            dottedLine(marginTop = 250.dp, marginStart = 5.dp)
-            diamondsPattern(marginTop = 270.dp)
-            dottedLine(marginTop = 290.dp, marginStart = 5.dp)
+            dottedLine(marginTop = 265.dp, marginStart = 5.dp)
+            diamondsPattern(marginTop = 285.dp)
+            dottedLine(marginTop = 305.dp, marginStart = 5.dp)
         }
     }
 

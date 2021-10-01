@@ -47,11 +47,11 @@ fun DrawScope.diamondsPattern(marginTop: Dp) {
             ),
             color = Color.Yellow
         )
-        if (it in 0 until diamondsCount) {
+        if (it > 0) {
             drawCircle(
                 color = Color.Black,
                 radius = 8f,
-                center = Offset(marginLeft + diamondRadius, marginTop.toPx())
+                center = Offset(itemWidth.times(it), marginTop.toPx())
             )
         }
         marginLeft = marginLeft.plus(itemWidth)
