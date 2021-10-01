@@ -57,8 +57,8 @@ fun DrawScope.drawCenterBannerArt() {
         topMargin = centeredArtBannerMarginTop,
         height = mainArtBannerHeight
     ) {
-        //I want to draw 3 flowers on main banner of the canvas
-        val weightSum = 3
+        //I want to draw this much flowers on main banner of the canvas
+        val weightSum = 5
 
         //Finds the width for each flower
         val eachFlowerWidth = size.width / weightSum
