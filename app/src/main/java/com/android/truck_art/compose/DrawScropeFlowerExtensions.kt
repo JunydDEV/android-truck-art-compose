@@ -13,7 +13,7 @@ import kotlin.math.sin
 
 fun DrawScope.drawPrimaryFlowerArt(positionX: Float = center.x, positionY: Float = center.y) {
     val circleRadius = 50f
-    val leafCount = 6
+    val leafCount = 7
     val angle = (360 / leafCount).toFloat()
 
     for (i in 1..leafCount) {
@@ -29,7 +29,7 @@ fun DrawScope.drawPrimaryFlowerArt(positionX: Float = center.x, positionY: Float
 }
 
 private fun DrawScope.drawPrimaryFlower(positionX: Float = center.x, positionY: Float = center.y) {
-    val circleRadius = 40f
+    val circleRadius = 35f
 
     drawCircle(
         color = SecondaryRectangleBackground,

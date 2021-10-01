@@ -41,7 +41,7 @@ fun DrawScope.drawDiamondsPattern(marginTop: Dp) {
         drawPath(
             path = createPathForDiamond(
                 marginLeft,
-                marginTop = marginTop.toPx(),
+                marginTop.toPx(),
                 diamondSides,
                 diamondRadius
             ),
