@@ -25,14 +25,14 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxWidth(),
                     color = MaterialTheme.colors.background
                 ) {
-                    DrawTruckArt()
+                    TruckArtComposable()
                 }
             }
         }
     }
 
     @Composable
-    private fun DrawTruckArt() {
+    private fun TruckArtComposable() {
         Column(
             verticalArrangement = Arrangement.Center,
             modifier = Modifier.fillMaxHeight()
@@ -43,9 +43,9 @@ class MainActivity : ComponentActivity() {
                     .fillMaxWidth()
                     .height(320.dp)
             ) {
-                drawArtAt(ArtPosition.TOP)
-                drawArtAt(ArtPosition.CENTER)
-                drawArtAt(ArtPosition.BOTTOM)
+                drawArtBannerAt(ArtPosition.TOP)
+                drawArtBannerAt(ArtPosition.CENTER)
+                drawArtBannerAt(ArtPosition.BOTTOM)
             }
         }
     }

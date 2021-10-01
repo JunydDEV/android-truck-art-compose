@@ -1,20 +1,16 @@
-package com.android.truck_art.compose.raw
+package com.android.truck_art.compose
 
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.center
-import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
-import androidx.compose.ui.graphics.drawscope.DrawStyle
 import androidx.compose.ui.graphics.drawscope.Stroke
 import com.android.truck_art.compose.ui.theme.CanvasBackground
-import com.android.truck_art.compose.ui.theme.Purple200
 import com.android.truck_art.compose.ui.theme.Purple700
 import kotlin.math.cos
 import kotlin.math.sin
 
-fun DrawScope.drawFlower(positionX: Float = center.x, positionY: Float = center.y) {
+fun DrawScope.drawPrimaryFlowerArt(positionX: Float = center.x, positionY: Float = center.y) {
     val circleRadius = 50f
     val leafCount = 6
     val angle = (360 / leafCount).toFloat()
@@ -26,12 +22,12 @@ fun DrawScope.drawFlower(positionX: Float = center.x, positionY: Float = center.
         val x = circleRadius * cos((theta).toFloat())
         val y = circleRadius * sin((theta).toFloat())
 
-        leaf(positionX + x, positionY - y)
+        drawPrimaryFlowerLeaf(positionX + x, positionY - y)
     }
-    flowerCenter(positionX, positionY)
+    drawPrimaryFlower(positionX, positionY)
 }
 
-private fun DrawScope.flowerCenter(positionX: Float = center.x, positionY: Float = center.y) {
+private fun DrawScope.drawPrimaryFlower(positionX: Float = center.x, positionY: Float = center.y) {
     val circleRadius = 40f
 
     drawCircle(
@@ -54,7 +50,7 @@ private fun DrawScope.flowerCenter(positionX: Float = center.x, positionY: Float
     )
 }
 
-private fun DrawScope.leaf(x: Float, y: Float) {
+private fun DrawScope.drawPrimaryFlowerLeaf(x: Float, y: Float) {
     val leafRadius = 20f
     drawCircle(
         color = Color.White,

@@ -6,61 +6,60 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.android.truck_art.compose.raw.drawFlower
 import com.android.truck_art.compose.ui.theme.PrimaryRectangleBackground
 import com.android.truck_art.compose.ui.theme.SecondaryRectangleBackground
 
-fun DrawScope.drawArtAt(artPosition: ArtPosition) {
+fun DrawScope.drawArtBannerAt(artPosition: ArtPosition) {
     when (artPosition) {
         ArtPosition.TOP -> {
-            drawTopArt()
+            drawTopBannerArt()
         }
         ArtPosition.CENTER -> {
-            drawCenterArt()
+            drawCenterBannerArt()
         }
         else -> {
-            drawBottomArt()
+            drawBottomBannerArt()
         }
     }
 }
 
-fun DrawScope.drawTopArt() {
-    drawRectangle(
+fun DrawScope.drawTopBannerArt() {
+    drawArtBannerCore(
         color = SecondaryRectangleBackground,
         height = 60.dp,
         topMargin = 5.dp
     ) {
-        dottedLine(marginTop = 15.dp, marginStart = 5.dp)
-        diamondsPattern(marginTop = 35.dp)
-        dottedLine(marginTop = 55.dp, marginStart = 5.dp)
+        drawDashedLine(marginTop = 15.dp, marginStart = 5.dp)
+        drawDiamondsPattern(marginTop = 35.dp)
+        drawDashedLine(marginTop = 55.dp, marginStart = 5.dp)
     }
 }
 
-fun DrawScope.drawCenterArt() {
-    drawRectangle(
+fun DrawScope.drawCenterBannerArt() {
+    drawArtBannerCore(
         color = PrimaryRectangleBackground,
         topMargin = 70.dp,
         height = 180.dp
     ) {
-        drawFlower(center.x - 300, center.y)
-        drawFlower()
-        drawFlower(center.x + 300, center.y)
+        drawPrimaryFlowerArt(center.x - 300, center.y)
+        drawPrimaryFlowerArt()
+        drawPrimaryFlowerArt(center.x + 300, center.y)
     }
 }
 
-fun DrawScope.drawBottomArt() {
-    drawRectangle(
+fun DrawScope.drawBottomBannerArt() {
+    drawArtBannerCore(
         color = SecondaryRectangleBackground,
         topMargin = 255.dp,
         height = 60.dp
     ) {
-        dottedLine(marginTop = 265.dp, marginStart = 5.dp)
-        diamondsPattern(marginTop = 285.dp)
-        dottedLine(marginTop = 305.dp, marginStart = 5.dp)
+        drawDashedLine(marginTop = 265.dp, marginStart = 5.dp)
+        drawDiamondsPattern(marginTop = 285.dp)
+        drawDashedLine(marginTop = 305.dp, marginStart = 5.dp)
     }
 }
 
-fun DrawScope.drawRectangle(
+fun DrawScope.drawArtBannerCore(
     color: Color,
     topMargin: Dp = 0.dp,
     height: Dp,

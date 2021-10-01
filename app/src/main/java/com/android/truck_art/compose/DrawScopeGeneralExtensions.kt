@@ -8,7 +8,7 @@ import kotlin.math.cos
 import kotlin.math.sin
 
 
-private fun createPath(
+private fun createPathForDiamond(
     marginLeft: Float,
     marginTop: Float,
     sides: Int,
@@ -30,7 +30,7 @@ private fun createPath(
     return path
 }
 
-fun DrawScope.diamondsPattern(marginTop: Dp) {
+fun DrawScope.drawDiamondsPattern(marginTop: Dp) {
     val diamondsCount = 10
     val itemWidth = (size.width) / diamondsCount
     val diamondRadius = itemWidth / 3
@@ -39,7 +39,7 @@ fun DrawScope.diamondsPattern(marginTop: Dp) {
 
     repeat(diamondsCount) {
         drawPath(
-            path = createPath(
+            path = createPathForDiamond(
                 marginLeft,
                 marginTop = marginTop.toPx(),
                 diamondSides,
@@ -58,7 +58,7 @@ fun DrawScope.diamondsPattern(marginTop: Dp) {
     }
 }
 
-fun DrawScope.dottedLine(
+fun DrawScope.drawDashedLine(
     marginTop: Dp,
     marginStart: Dp,
     strokeWidth: Float = 10f,
