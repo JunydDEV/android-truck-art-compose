@@ -6,6 +6,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.android.truck_art.compose.ArtDimensions.Companion.bottomArtBannerMarginTop
+import com.android.truck_art.compose.ArtDimensions.Companion.bottomBannerDashedLineMarginTop
+import com.android.truck_art.compose.ArtDimensions.Companion.centeredArtBannerMarginTop
+import com.android.truck_art.compose.ArtDimensions.Companion.dashedLineMarginStart
+import com.android.truck_art.compose.ArtDimensions.Companion.diamondPatternMarginTop
+import com.android.truck_art.compose.ArtDimensions.Companion.mainArtBannerHeight
+import com.android.truck_art.compose.ArtDimensions.Companion.secondaryArtBannerHeight
+import com.android.truck_art.compose.ArtDimensions.Companion.topArtBannerMarginTop
+import com.android.truck_art.compose.ArtDimensions.Companion.topBannerDashedLineMarginTop
+import com.android.truck_art.compose.ArtDimensions.Companion.truckArtCanvasHeight
 import com.android.truck_art.compose.ui.theme.PrimaryRectangleBackground
 import com.android.truck_art.compose.ui.theme.SecondaryRectangleBackground
 
@@ -26,36 +36,60 @@ fun DrawScope.drawArtBannerAt(artPosition: ArtPosition) {
 fun DrawScope.drawTopBannerArt() {
     drawArtBannerCore(
         color = SecondaryRectangleBackground,
-        height = 60.dp,
-        topMargin = 5.dp
+        height = secondaryArtBannerHeight,
+        topMargin = topArtBannerMarginTop
     ) {
-        drawDashedLine(marginTop = 15.dp, marginStart = 5.dp)
-        drawDiamondsPattern(marginTop = 35.dp)
-        drawDashedLine(marginTop = 55.dp, marginStart = 5.dp)
+        drawDashedLine(
+            marginTop = topBannerDashedLineMarginTop,
+            marginStart = dashedLineMarginStart
+        )
+        drawDiamondsPattern(marginTop = diamondPatternMarginTop)
+        drawDashedLine(
+            marginTop = secondaryArtBannerHeight - topArtBannerMarginTop,
+            marginStart = dashedLineMarginStart
+        )
     }
 }
 
 fun DrawScope.drawCenterBannerArt() {
     drawArtBannerCore(
         color = PrimaryRectangleBackground,
-        topMargin = 70.dp,
-        height = 180.dp
+        topMargin = centeredArtBannerMarginTop,
+        height = mainArtBannerHeight
     ) {
-        drawPrimaryFlowerArt(center.x - 300, center.y)
-        drawPrimaryFlowerArt()
-        drawPrimaryFlowerArt(center.x + 300, center.y)
+        //I want to draw 3 flowers on main banner of the canvas
+        val weightSum = 3
+
+        //Finds the width for each flower
+        val eachFlowerWidth = size.width / weightSum
+
+        //Finds the X Offset at the center of individual item width.
+        var positionX = eachFlowerWidth / 2
+
+        repeat(weightSum) {
+            drawPrimaryFlowerArt(positionX, center.y)
+
+            //Moves the drawing control to the next item X Offset center position
+            positionX += eachFlowerWidth
+        }
     }
 }
 
 fun DrawScope.drawBottomBannerArt() {
     drawArtBannerCore(
         color = SecondaryRectangleBackground,
-        topMargin = 255.dp,
-        height = 60.dp
+        topMargin = bottomArtBannerMarginTop,
+        height = secondaryArtBannerHeight
     ) {
-        drawDashedLine(marginTop = 265.dp, marginStart = 5.dp)
-        drawDiamondsPattern(marginTop = 285.dp)
-        drawDashedLine(marginTop = 305.dp, marginStart = 5.dp)
+        drawDashedLine(
+            marginTop = bottomArtBannerMarginTop + bottomBannerDashedLineMarginTop,
+            marginStart = dashedLineMarginStart
+        )
+        drawDiamondsPattern(marginTop = truckArtCanvasHeight - diamondPatternMarginTop)
+        drawDashedLine(
+            marginTop = truckArtCanvasHeight - topBannerDashedLineMarginTop,
+            marginStart = dashedLineMarginStart
+        )
     }
 }
 

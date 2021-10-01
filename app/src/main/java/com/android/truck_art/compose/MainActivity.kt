@@ -11,7 +11,6 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.drawscope.DrawScope
-import androidx.compose.ui.unit.dp
 import com.android.truck_art.compose.ui.theme.AndroidtruckartcomposeTheme
 import com.android.truck_art.compose.ui.theme.CanvasBackground
 
@@ -52,7 +51,7 @@ class MainActivity : ComponentActivity() {
             modifier = Modifier
                 .background(color = CanvasBackground)
                 .fillMaxWidth()
-                .height(320.dp)
+                .height(ArtDimensions.truckArtCanvasHeight)
         ) {
             onDraw.invoke(this)
         }
