@@ -7,6 +7,7 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import com.android.truck_art.compose.ui.theme.CanvasBackground
 import com.android.truck_art.compose.ui.theme.Purple700
+import com.android.truck_art.compose.ui.theme.SecondaryRectangleBackground
 import kotlin.math.cos
 import kotlin.math.sin
 
@@ -31,7 +32,7 @@ private fun DrawScope.drawPrimaryFlower(positionX: Float = center.x, positionY: 
     val circleRadius = 40f
 
     drawCircle(
-        color = CanvasBackground,
+        color = SecondaryRectangleBackground,
         center = Offset(positionX, positionY),
         radius = circleRadius,
     )
@@ -59,7 +60,7 @@ private fun DrawScope.drawPrimaryFlowerLeaf(x: Float, y: Float) {
         style = Stroke(width = 20f),
     )
     drawCircle(
-        brush = Brush.radialGradient(listOf(CanvasBackground, Purple700)),
+        brush = Brush.radialGradient(listOf(SecondaryRectangleBackground, Purple700)),
         center = Offset(x, y),
         radius = leafRadius,
     )
