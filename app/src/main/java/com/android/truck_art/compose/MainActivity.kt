@@ -16,13 +16,10 @@ import androidx.compose.ui.graphics.*
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.android.truck_art.compose.raw.ArtItems.Companion.diamondsPattern
-import com.android.truck_art.compose.raw.ArtItems.Companion.dottedLine
-import com.android.truck_art.compose.raw.Flower.Companion.drawFlower
+import com.android.truck_art.compose.raw.drawFlower
 import com.android.truck_art.compose.ui.theme.*
 
 class MainActivity : ComponentActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
